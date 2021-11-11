@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:red_book/views/Authentication/Authentication_service.dart';
+import 'package:image_gallery/views/Authentication/Authentication_service.dart';
 
 class SignInPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -16,13 +16,17 @@ class SignInPage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(height: 50),
-          TextField(
-            controller: emailController,
-            decoration: InputDecoration(labelText: "Email"),
+          Container(
+            child: TextField(
+              controller: emailController,
+              decoration: InputDecoration(labelText: "Email"),
+            ),
           ),
-          TextField(
-            controller: passwordController,
-            decoration: InputDecoration(labelText: "Password"),
+          Container(
+            child: TextField(
+              controller: passwordController,
+              decoration: InputDecoration(labelText: "Password"),
+            ),
           ),
           SizedBox(height: 50),
           ElevatedButton(

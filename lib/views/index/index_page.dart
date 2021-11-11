@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:red_book/views/home/home_page.dart';
-import 'package:red_book/views/image_store/image_store.dart';
-import 'package:red_book/views/profile/profile_screen.dart';
-import 'package:red_book/views/text/text.dart';
+import 'package:image_gallery/views/home/home_page.dart';
+import 'package:image_gallery/views/image_store/image_store.dart';
+import 'package:image_gallery/views/profile/profile_screen.dart';
+import 'package:image_gallery/views/text/text.dart';
 
 class IndexPage extends StatefulWidget {
   @override

@@ -42,6 +42,7 @@ class _HomePageState extends State<HomePage> {
       }
     });
   }
+
   void _clear() {
     setState(() => _imageFile = null);
   }
