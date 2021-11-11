@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -89,23 +88,12 @@ class _AddImageState extends State<AddImages> {
   Future<void> chooseImage() async {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
     setState(() {
-      _image.add(File(pickedFile.path));
+      if (pickedFile != null) {
+        _image.add(File(pickedFile.path));
+      } else {
+        print('No Images selected');
+      }
     });
-    if (pickedFile.path == null) retrieveLostData();
-  }
-
-  Future<void> retrieveLostData() async {
-    final LostDataResponse response = await picker.retrieveLostData();
-    if (response.isEmpty) {
-      return;
-    }
-    if (response.file != null) {
-      setState(() {
-        _image.add(File(response.file.path));
-      });
-    } else {
-      print(response.file);
-    }
   }
 
   Future uploadFile() async {
@@ -114,9 +102,7 @@ class _AddImageState extends State<AddImages> {
       setState(() {
         val = i / _image.length;
       });
-      ref = FirebaseStorage.instance
-          .ref()
-          .child('images/${Path.basename(eachImg.path)}');
+      ref = FirebaseStorage.instance.ref().child('images/${Path.basename(eachImg.path)}');
       await ref.putFile(eachImg).whenComplete(() async {
         await ref.getDownloadURL().then((value) {
           imgRef.add({'url': value});

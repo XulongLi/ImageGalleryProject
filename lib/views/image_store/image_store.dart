@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
-import 'package:red_book/views/image_store/add_image.dart';
+import 'package:image_gallery/views/image_store/add_image.dart';
 
 class ImageStore extends StatefulWidget {
   @override

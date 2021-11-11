@@ -39,6 +39,8 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       if (pickedFile != null) {
         _imageFile = File(pickedFile.path);
+      } else {
+        print('No Images selected');
       }
     });
   }

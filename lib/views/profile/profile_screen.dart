@@ -3,7 +3,7 @@ import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
-import 'package:red_book/views/Authentication/Authentication_service.dart';
+import 'package:image_gallery/views/Authentication/Authentication_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
